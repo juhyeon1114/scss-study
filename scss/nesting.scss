@@ -1,0 +1,135 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    gap: 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Nesting (선택자 중첩) : Basic */
+.sns {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li {
+        border: 1px solid black;
+        padding: 10px;
+        flex: 1;
+        text-align: center;
+        a {
+            color: black;
+            text-transform: uppercase;
+        }
+    }
+}
+
+
+/* Nesting : 부모 선택자 & */
+.btnOuter {
+    .btn {
+        color: white;
+        width: 300px;
+        text-transform: uppercase;
+        display: block;
+        text-align: center;
+        height: 50px;
+        line-height: 50px;
+        background-color: #555;
+        transition: all ease-in-out 0.2s;
+        position: relative;
+        &:hover { // === .btn:hover
+            background-color: transparent;
+            color: black;
+        }
+        &::before, &::after {
+            position: absolute;
+            top:0;
+            left:0;
+            content: '';
+            width: inherit;
+            height: inherit;
+            border: 1px solid black;
+            opacity: 0;
+            transition: all ease-in-out 0.2s;
+        }
+        &:hover::before {
+            transform: rotate(45deg);
+            opacity: 1;
+        }
+        &:hover::after {
+            transform: rotate(-45deg);
+            opacity: 1;
+        }
+    }
+}
+
+/* Nesting : & 응용*/
+// - &를 class의 접두어로 활용하기
+.font {
+    &-large {
+        font-size: 60px;
+    }
+    &-medium {
+        font-size:48px;
+    }
+    &-small {
+        font-size: 24px;
+    }
+}
+
+/* Nesting : &과 가상클래스, 특수 선택자 */
+.applyBtn {
+    background-color: white;
+    color: black;
+    border: 1px solid #333;
+    border-radius: 3px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    &:hover {
+        background-color: black;
+        color: white;
+    }
+}
+
+.frame {
+    display: flex;
+    gap: 10px;
+    div {
+        // border: 1px solid black;
+        padding: 10px 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1); // x축 y축 퍼짐정도 Blur
+        transition: all 0.3s;
+        &:hover {
+            color: white;
+            transform: translateY(-5px);
+        }
+        &:nth-child(1) {
+            background-color: lightseagreen;
+        }
+        &:nth-child(2) {
+            background-color: lightcoral;
+        }
+        &:nth-child(3) {
+            background-color: lightblue;
+        }
+    }
+}
+
+/* Nesting : 중접 빠져나가기 @at-root */
+.rootFrame {
+    padding: 20px;
+    border: 1px solid black;
+    text-align: center;
+    @at-root .heading { // heading이라는 class에 모두 적용하고 싶을때
+        font-size: 36px;
+        color: crimson;
+    }
+}
