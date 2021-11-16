@@ -1,0 +1,81 @@
+$primary: royalblue;
+$secondary: yellowgreen;
+$warning: crimson;
+
+.btns {
+    .btn {
+        border: none;
+        text-transform: uppercase;
+        font-size: 15px;
+        padding: 10px 30px;
+        border-radius: 3px;
+        color: #fff;
+        margin: 20px;
+    }
+
+    .primary {
+        background-color: $primary;
+    }
+
+    .secondary {
+        background-color: $secondary;
+    }
+
+    .warning {
+        background-color: $warning;
+    }
+}
+
+$color-primary: #222;
+$color-secondary: #333;
+$bg-color-item: #eee;
+$portfolio-item-w: 300px;
+$portfolio-item-h: 300px;
+$portfolio-images-url: "../img";
+
+.portfolio {
+    padding: 20px;
+
+    h1 {
+        text-align: center;
+        font-size: 30px;
+    }
+
+    .portfolioItems {
+        width: 1200px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        .portfolioItem {
+            border: 1px solid black;
+            width: $portfolio-item-w;
+            height: $portfolio-item-h;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            &:nth-child(1) {
+                background-image: url($portfolio-images-url/blog-post-01.jpg);
+            }
+            &:nth-child(2) {
+                background-image: url($portfolio-images-url/blog-post-02.jpg);
+            }
+            &:nth-child(3) {
+                background-image: url($portfolio-images-url/blog-post-03.jpg);
+            }
+            &:nth-child(4) {
+                background-image: url($portfolio-images-url/blog-post-04.jpg);
+            }
+            &:nth-child(5) {
+                background-image: url($portfolio-images-url/blog-post-05.jpg);
+            }
+            &:nth-child(6) {
+                background-image: url($portfolio-images-url/blog-post-06.jpg);
+            }
+            &:nth-child(7) {
+                background-image: url($portfolio-images-url/blog-post-07.jpg);
+            }
+            &:nth-child(8) {
+                background-image: url($portfolio-images-url/blog-post-08.jpg);
+            }
+        }
+    }
+}

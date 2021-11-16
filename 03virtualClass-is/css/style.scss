@@ -1,0 +1,19 @@
+/*
+    가상클래스 :is 는 scss문법이 아니라 css고유 문법
+*/
+
+:is(header, section, footer) h1 {
+    font-size: 30px;
+    font-weight: normal;
+}
+
+:is(header, section, footer) h1:before {
+    content: '';
+    width: 10px;
+    height: 30px;
+    background-color: crimson;
+    display: inline-block;
+    border-radius: 5px;
+    margin-right:10px;
+    transform: translateY(3px);
+}
