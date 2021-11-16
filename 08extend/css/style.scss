@@ -1,0 +1,62 @@
+body {
+    margin:0;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.btn {
+    width: 200px;
+    padding: 7px;
+    background-color: white;
+    font-size: 18px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    border:none;
+    outline: none;
+    cursor: pointer;
+}
+
+.order {
+    @extend .btn;
+    border: 1px solid blue;
+    background-color: blue;
+    color: white;
+} 
+
+.add {
+    @extend .btn;
+    border: 1px solid green;
+    background-color: green;
+    color: white;
+}
+
+.checkout {
+    @extend .btn;
+    border: 1px dashed red;
+}
+
+
+/*
+    Placeholder 선택자 : %
+    shape은 css에 만들어지지 않음
+*/
+%shape {
+    border: 1px solid black;
+    width: 250px;
+    height: 300px;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba($color: #000000, $alpha: 0.2);
+}
+
+.card {
+    display: flex;
+    gap: 20px;
+    &Item {
+        @extend %shape;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

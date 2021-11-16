@@ -1,0 +1,16 @@
+$colors: (
+   primary: royalblue,
+   secondary: coral,
+   focus: green,
+   gray: gray,
+);
+
+body {
+    background-color: map-get($map: $colors, $key: secondary);
+}
+
+.frame {
+    h1 {
+        color: map-get($map: $colors, $key: primary)
+    }
+}
