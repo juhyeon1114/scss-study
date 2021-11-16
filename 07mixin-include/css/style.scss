@@ -1,0 +1,61 @@
+/*
+    @mixin : 재사용할 그룹을 정의
+    @include : 정의된 그룹(@mixin)을 사용
+*/
+
+@import 'mixin.scss';
+
+$complete: skyblue;
+$loading: green;
+$error: crimson;
+
+body {
+    @include default;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    gap: 20px;
+}
+
+.heading,
+.newsHead {
+    @include headline;
+}
+
+.complete {
+    @include notice-button;
+    border: 3px solid $complete;
+    color: $complete;
+}
+
+.loading {
+    @include notice-button;
+    border: 3px solid $loading;
+    color: $loading;
+}
+
+.error {
+    @include notice-button;
+    border: 3px solid $error;
+    color: $error;
+}
+
+.buttons {
+    button {
+        width: 200px;
+        padding: 7px;
+        background-color: white;
+        outline: none;
+        cursor: pointer;
+        font-size: 18px;
+        &.approval {
+            @include border-style(2px, solid ,blue);
+        }
+        &.refuse {
+            @include border-style(2px, solid ,red);
+        }
+    }
+}
