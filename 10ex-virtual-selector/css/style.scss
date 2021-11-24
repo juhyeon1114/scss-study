@@ -1,0 +1,55 @@
+* {
+    box-sizing: border-box;
+}
+
+.text-link {
+    text-decoration: none;
+    color: #000;
+    &:visited {
+        color: purple
+    }
+    &:active {
+        color:red;
+    }
+    &:hover {
+        color: blue;
+    }
+}
+
+section {
+    border: 1px solid black;
+    h1 {
+        font-weight: normal;
+        font-size: 42px;
+        margin-top: 0;
+        text-align: center;
+    }
+    .section-inner {
+        border: 1px solid red;
+        .items {
+            border: 3px solid blue;
+            width: 900px;
+            margin: auto;
+            display: flex;
+
+            div {
+                flex:1;
+                border: 3px solid green;
+                height: 200px;
+                &:nth-child(1) {
+                    background-color: coral;
+                }
+                &:nth-child(2) {
+                    background-color: royalblue;
+                }
+                &:nth-child(3) {
+                    background-color: palevioletred;
+                }
+                &:hover {
+                    background-color: gray;
+                }
+            }
+            
+        }
+    }
+}
