@@ -1,0 +1,55 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+$width: 150px;
+$itemWidth: $width/2;
+
+
+.figma {
+    width: $width;
+    text-align: center;
+
+    >span {
+        font-size: 48px;
+        margin-bottom: 20px;
+        display: inline-block;
+    }
+
+    .shape {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        span {
+            height: $itemWidth;
+
+            &:nth-child(1) {
+                background-color: tomato;
+                border-radius: 50% 0 0 50%;
+            }
+
+            &:nth-child(2) {
+                background-color: coral;
+                border-radius: 0 50% 50% 0;
+            }
+
+            &:nth-child(3) {
+                background-color: violet;
+                border-radius: 50% 0 0 50%;
+            }
+
+            &:nth-child(4) {
+                background-color: royalblue;
+                border-radius: 50%;
+            }
+
+            &:nth-child(5) {
+                background-color: green;
+                border-radius: 50% 0 50% 50%;
+            }
+        }
+    }
+}

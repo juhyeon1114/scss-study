@@ -1,0 +1,58 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #222;
+    ;
+}
+
+$heart-color: crimson;
+
+.heartBeat {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: $heart-color;
+    transform: rotate(45deg);
+
+    box-shadow:
+        -10px -10px 100px $heart-color,
+        -10px -10px 150px $heart-color,
+        -10px -10px 200px $heart-color;
+
+    animation: heart-beat 0.35s ease-in-out infinite;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        width: inherit;
+        height: inherit;
+        background-color: inherit;
+        border-radius: 50%;
+    }
+
+    &::before {
+        top: -50%;
+    }
+
+    &::after {
+        left: -50%;
+    }
+}
+
+/* keyframes는 어디에 있든 상관 없음 */
+@keyframes heart-beat {
+    0% {
+        transform: rotate(45deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(45deg) scale(1.05);
+    }
+
+    100% {
+        transform: rotate(45deg) scale(0.95);
+    }
+}
