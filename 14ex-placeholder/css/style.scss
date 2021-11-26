@@ -1,0 +1,85 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Mixin & Include */
+// @mixin circleBox {
+//     border: 1px solid black;
+//         width: 200px;
+//         height: 200px;
+//         border-radius: 50%;
+//         display: inline-block;
+//         background-color: tomato;
+// }
+
+// .items {
+//     .item1 {
+//         @include circleBox();
+//         background-color: royalblue;
+//     }
+//     .item2 {
+//         @include circleBox();
+//         background-color: aqua;
+//     }
+//     .item3 {
+//         @include circleBox();
+//         background-color: yellow;
+//     }
+// }
+
+/* Extend */
+// .circleBox {
+//     border: 1px solid black;
+//     width: 200px;
+//     height: 200px;
+//     border-radius: 50%;
+//     display: inline-block;
+//     background-color: tomato;
+// }
+
+// .items {
+//     .item1 {
+//         @extend .circleBox;
+//         background-color: royalblue;
+//     }
+
+//     .item2 {
+//         @extend .circleBox;
+//         background-color: aqua;
+//     }
+
+//     .item3 {
+//         @extend .circleBox;
+//         background-color: yellow;
+//     }
+// }
+
+/* Placeholder % */
+%circleBox {
+    border: 1px solid black;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: tomato;
+}
+
+.items {
+    .item1 {
+        @extend %circleBox;
+        background-color: royalblue;
+    }
+
+    .item2 {
+        @extend %circleBox;
+        background-color: aqua;
+    }
+
+    .item3 {
+        @extend %circleBox;
+        background-color: yellow;
+    }
+}
