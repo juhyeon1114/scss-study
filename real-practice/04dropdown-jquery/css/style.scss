@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+    ;
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+}
+
+
+.faq {
+    color: white;
+
+    &-inner {
+        width: 900px;
+        margin: auto;
+
+        h1 {
+            font-size: 36px;
+            text-align: center;
+        }
+    }
+
+    &-title {
+        margin-top: 8px;
+        background-color: #333;
+        padding: 10px;
+        cursor: pointer;
+        &::after {
+            content: '‣';
+            float: right;
+            transform: rotate(90deg);
+            transition: all 0.3s ease-in-out;
+            transform-origin: center center;
+        }
+        &.active::after {
+            transform: rotate(-90deg);
+        }
+    }
+
+    &-content {
+        padding: 10px;
+        display: none;
+    }
+}

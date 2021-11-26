@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons+Outlined');
+
+$main-color: transparentize(white, 0.5); // scss의 built-in-function
+$size: 100px;
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+}
+
+.icons {
+    color: white;
+    display: flex;
+    gap: $size/5;
+
+    li {
+        label {
+            cursor: pointer;
+
+            input[name=check-item] {
+                display: none;
+
+                &:checked+div {
+                    // + : 인접 선택자. 바로 옆에 있는 DOM Element
+                    box-shadow:
+                        0 0 $size/4 $main-color,
+                        inset 0 0 $size/10 $main-color;
+                }
+
+                &:checked+div>span {
+                    text-shadow:
+                        0 0 $size/4 $main-color,
+                        0 0 ($size/4 + 5) $main-color;
+                    border-radius: 50%;
+                    
+                }
+            }
+
+            div {
+                transition: all 0.2s ease-in-out;
+                user-select: none;
+                border: $size/40 solid white;
+                border-radius: 50%;
+                overflow: hidden;
+                display: flex;
+                width: $size;
+                height: $size;
+                justify-content: center;
+                align-items: center;
+
+                span {
+                    transition: all 0.2s ease-in-out;
+                    font-size: $size/2;
+                }
+            }
+        }
+    }
+}

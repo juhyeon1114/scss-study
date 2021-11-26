@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+@import './mixin.scss';
+
+$head-size: 40px;
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    @include default();
+    height: auto;
+}
+
+.portfolio {
+    h1 {
+        @include heading($head-size);
+        font-size: $head-size;
+        margin-bottom: $head-size;
+    }
+
+    .items {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 15px;
+
+        >div {
+            transition: all 0.3s ease-in-out;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.20);
+            position: relative;
+
+            &::before {
+                transition: all 0.3s ease-in-out;
+                content: '';
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0);
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+
+            a {
+                .icon {
+                    position: absolute;
+                    color: white;
+                    top: 50%;
+                    left: 50%;
+                    font-size: 0px;
+                    font-weight: 100;
+                    transform: translate(-50%, -50%);
+                    transition: all 0.3s ease-in-out;
+                    opacity: 0;
+                }
+
+                .title {
+                    position: absolute;
+                    color: white;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translate(-50%, 50px);
+                    transition: all 0.3s ease-in-out;
+                }
+            }
+
+            &:hover {
+                &::before {
+                    background-color: rgba(0, 0, 0, 0.3);
+                }
+
+                a {
+                    .icon {
+                        font-size: 120px;
+                        opacity: 1;
+                    }
+
+                    .title {
+                        transform: translate(-50%, 0);
+                    }
+                }
+            }
+        }
+
+        .focus {
+            // grid-area: span 2 / span 2;
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+    }
+}
+
+
+@media (min-width: 768px) and (max-width: 1366px) {
+    .portfolio {
+        h1 {
+            font-size: $head-size/1.5;
+        }
+
+        .items {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio {
+        h1 {
+            font-size: $head-size/2;
+        }
+
+        .items {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}

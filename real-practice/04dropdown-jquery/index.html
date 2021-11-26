@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <!-- jQuery UI CDN -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+</head>
+
+<script>
+    window.onload = function () {
+        $('.faq-title').click(function () {
+            const activated = $(this).hasClass('active')
+            $('.faq-title').removeClass('active');
+            $('.faq-content').slideUp();
+            if (!activated) {
+                $(this).addClass('active')
+                $(this).next().slideDown();
+            }
+        })
+    }
+</script>
+
+<body>
+
+    <section class="faq">
+        <div class="faq-inner">
+            <h1>Frequently asked questions</h1>
+            <div class="faq-title">
+                Q111
+            </div>
+            <div class="faq-content">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum illo repellendus neque, hic minima
+                molestiae, nemo mollitia alias provident deserunt culpa optio id quas, eaque eveniet voluptas magni.
+                Similique, error?
+            </div>
+            <div class="faq-title">
+                Q222
+            </div>
+            <div class="faq-content">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum illo repellendus neque, hic minima
+                molestiae, nemo mollitia alias provident deserunt culpa optio id quas, eaque eveniet voluptas magni.
+                Similique, error?
+            </div>
+            <div class="faq-title">
+                Q222
+            </div>
+            <div class="faq-content">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum illo repellendus neque, hic minima
+                molestiae, nemo mollitia alias provident deserunt culpa optio id quas, eaque eveniet voluptas magni.
+                Similique, error?
+            </div>
+            <div class="faq-title">
+                Q222
+            </div>
+            <div class="faq-content">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum illo repellendus neque, hic minima
+                molestiae, nemo mollitia alias provident deserunt culpa optio id quas, eaque eveniet voluptas magni.
+                Similique, error?
+            </div>
+            <div class="faq-title">
+                Q222
+            </div>
+            <div class="faq-content">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum illo repellendus neque, hic minima
+                molestiae, nemo mollitia alias provident deserunt culpa optio id quas, eaque eveniet voluptas magni.
+                Similique, error?
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
